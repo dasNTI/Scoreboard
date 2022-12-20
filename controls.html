@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreboard</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/static/controls.js" defer></script>
+    <link rel="stylesheet" href="/static/controls.css">
+</head>
+<body>
+    <div id="bg"></div>
+    <div id="table-container">
+        <table>
+
+        </table>
+    </div>
+
+    <div id="side-container">
+        <div id="new-container">
+            <h2>New</h2>
+            <div id="name-container" class="input-container">
+                <span>Name:</span>
+                <input type="text" id="new_name">
+            </div>
+            <div class="input-container" id="class-container">
+                <span>Class:</span>
+                <input type="text" id="new_class">
+            </div>
+            <div class="input-container" id="time-container">
+                <span>Time:</span>
+                <div id="timer-container">
+                    <input type="number" id="new_time_minutes" min="0" max="99">:
+                    <input type="number" id="new_time_seconds" min="0" max="59">:
+                    <input type="number" id="new_time_milliseconds" min="0" max="99">
+                </div>
+            </div>
+
+            <button id="add_player_btn">OK</button>
+        </div>
+        <div id="edit-container" class="hidden">
+            <h2>Edit</h2>
+            <div id="name-container" class="input-container">
+                <span>Name:</span>
+                <input type="text" id="edit_name">
+            </div>
+            <div class="input-container" id="class-container">
+                <span>Class:</span>
+                <input type="text" id="edit_class">
+            </div>
+            <div class="input-container" id="time-container">
+                <span>Time:</span>
+                <div id="timer-container">
+                    <input type="number" id="edit_time_minutes" min="0" max="99">:
+                    <input type="number" id="edit_time_seconds" min="0" max="59">:
+                    <input type="number" id="edit_time_milliseconds" min="0" max="99">
+                </div>
+            </div>
+
+            <button id="edit_player_btn">OK</button>
+        </div>
+    </div>
+</body>
+</html>

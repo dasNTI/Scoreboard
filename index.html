@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/static/main.js" defer></script>
+    <link rel="stylesheet" href="/static/main.css">
+</head>
+<body>
+    <div id="bg"></div>
+
+    <table>
+        <tr>
+            <td>Platz</td>
+            <td>Name</td>
+            <td>Klasse</td>
+            <td>Zeit</td>
+        </tr>
+        <tr>
+            <td>1. </td>
+            <td>Emily Bauer</td>
+            <td>7SK</td>
+            <td>00:37:00</td>
+        </tr>
+        <tr>
+            <td>2. </td>
+            <td>Tessa Mes</td>
+            <td>7SK</td>
+            <td>00:57:00</td>
+        </tr>
+        <tr>
+            <td>3. </td>
+            <td>Theo Mesch</td>
+            <td>8SK</td>
+            <td>00:40:00</td>
+        </tr>
+        <tr>
+            <td>4. </td>
+            <td>Emily Bauer</td>
+            <td>7SK</td>
+            <td>00:37:00</td>
+        </tr>
+        <tr>
+            <td>5. </td>
+            <td>Tessa Mes</td>
+            <td>7SK</td>
+            <td>00:57:00</td>
+        </tr>
+        <tr>
+            <td>6. </td>
+            <td>Theo Mesch</td>
+            <td>8SK</td>
+            <td>00:40:00</td>
+        </tr>
+        <tr>
+            <td>7. </td>
+            <td>Emily Bauer</td>
+            <td>7SK</td>
+            <td>00:37:00</td>
+        </tr>
+        <tr>
+            <td>8. </td>
+            <td>Tessa Mes</td>
+            <td>7SK</td>
+            <td>00:57:00</td>
+        </tr>
+        <tr>
+            <td>9. </td>
+            <td>Theo Mesch</td>
+            <td>8SK</td>
+            <td>00:40:00</td>
+        </tr>
+        <tr>
+            <td>10. </td>
+            <td>Emily Bauer</td>
+            <td>7SK</td>
+            <td>00:37:00</td>
+        </tr>
+    </table>
+
+    <div id="alert" class="hidden">
+        <span>Du bist auf dem</span>
+        <h1>5. Platz</h1>
+        <p>Vor dir ist <span id="alert_name">Tessa</span> mit <span id="alert_time">00:00:00</span></p>
+    </div>
+</body>
+</html>

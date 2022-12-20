@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: calc(var(--cell-height) / 2.5);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    user-select: none;
+}
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+#bg {
+    z-index: -10;
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+:root {
+    --cell-spacing-y: 5px;
+    --cell-spacing-x: 20px;
+    --cell-height: calc((100vh - 80px - 10 * var(--cell-spacing-y)) / 11);
+}
+
+table {
+    height: calc(var(--cell-height) * 10);
+    border-spacing: var(--cell-spacing-x) var(--cell-spacing-y);
+    max-width: 750px;
+    width: 50%;
+}
+
+tr {
+    height: var(--cell-height);
+    position: relative;
+}
+tr::before {
+    content: '';
+    background: #f9f9f9;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+td {
+    position: relative;
+    text-align: center;
+}
+
+tr:not(:first-child) td:not(:last-child)::after {
+    content: '';
+    background: linear-gradient(90deg, transparent, gray, transparent);
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    right: calc(var(--cell-spacing-x) / 2 * -1);
+    top: 0;
+    background: linear-gradient(to bottom, transparent 0%, #bbbbbb 50%, transparent 100%);
+}
+
+td > {
+    left: 50%;
+    top: 50%;
+    transform: translate(50%, 50%);
+}
+
+#alert {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000b6;
+    color: white;
+    transition: .5s ease opacity;
+    opacity: 0;
+}
+#alert.animating {
+    animation: alert 5s ease forwards;
+}
+@keyframes alert {
+    0%, 100% {
+        opacity: 0;
+    }
+    10%, 80% {
+        opacity: 1;
+    }
+}
+#alert > h1 {
+    color: rgb(255, 88, 88);
+    font-size: var(--cell-height);
+    margin: calc(var(--cell-spacing-y) * 3);
+}
+#alert p span {
+    font-weight: bold;
+}
